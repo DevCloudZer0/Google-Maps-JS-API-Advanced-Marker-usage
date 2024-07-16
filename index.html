@@ -1,0 +1,44 @@
+
+<html>
+  <head>
+    <title>Google Map Advanced Marker Example</title>
+
+    <style type="text/css">
+      #map {
+  height: 100%;
+}
+
+/* 
+ * Optional: Makes the sample page fill the window. 
+ */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+    </style>
+    	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=beta&key=AIzaSyCAIwTPctnSM2PWcbK6cMdlZaSgEYIKp5U&loading=async&callback=initialize&libraries=marker"></script>
+        <script type="text/javascript">
+    
+        function initialize() {
+				
+			var map;
+            var CenterLatLng = new google.maps.LatLng(-28.95, 25.41);
+            var mapOptions = { zoom: 6, center: CenterLatLng, mapId: "6b13b3bf65bd51e6" };
+            map = new google.maps.Map(document.getElementById('map'), mapOptions);
+            const marker = new google.maps.marker.AdvancedMarkerElement({
+            map,
+            position: CenterLatLng,
+			title: 'Near the Centre of SA',
+            });
+        }
+				
+    </script>
+
+  </head>
+  <body>
+    <div id="map"></div>
+    </body>
+</html>
